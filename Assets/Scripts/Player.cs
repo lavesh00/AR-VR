@@ -24,10 +24,10 @@ public class Player : MonoBehaviour
     [SerializeField] private WheelCollider frontRightWheelCollider;
     [SerializeField] private WheelCollider rearLeftWheelCollider;
     [SerializeField] private WheelCollider rearRightWheelCollider;
-    [SerializeField] private Transform frontLeftWheelTransform;
-    [SerializeField] private Transform frontRightWheelTransform;
-    [SerializeField] private Transform rearLeftWheelTransform;
-    [SerializeField] private Transform rearRightWheelTransform;
+    [SerializeField] public Transform frontLeftWheelTransform;
+    [SerializeField] public Transform frontRightWheelTransform;
+    [SerializeField] public Transform rearLeftWheelTransform;
+    [SerializeField] public Transform rearRightWheelTransform;
     [SerializeField] private GameObject boton_pausa;
     [SerializeField] private GameObject boton_reanudar;
     [SerializeField] private GameObject boton_next;
@@ -61,11 +61,7 @@ public class Player : MonoBehaviour
             //GameObject.FindObjectOfType<AudioManager>().gameOver();
             ToggleGameOver();
         }
-        if (collision.gameObject.CompareTag("Win"))
-        {
-            //GameObject.FindObjectOfType<AudioManager>().winGame();
-            ToggleWin();
-        }
+        // Win condition is now handled by WinZone script - no collision needed
     }
 
     public void MainMenu()
